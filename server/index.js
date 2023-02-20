@@ -10,6 +10,10 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import { register, login } from "./controllers/auth.js";
+import { verifyToken } from "./middleware/auth.js";
+import { getUser } from "./controllers/user.js";
+import { createPost } from "./controllers/posts.js";
+import publishRoutes from "./routes/posts.js";
 
 //Configuration
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +43,13 @@ const upload = multer({ storage });
 //Register & Login Routes
 app.post("/auth/register", upload.single("picture"), register);
 app.post("/auth/login", login);
+
+//User profile Route
+app.post("/profile/:id", verifyToken, getUser);
+
+//Post Route
+app.post("/posts/create", verifyToken, upload.single("picture"), createPost);
+app.post("/posts", publishRoutes);
 
 //Mongoose
 const PORT = process.env.PORT || 6001;
