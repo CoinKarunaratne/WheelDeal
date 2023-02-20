@@ -1,19 +1,21 @@
-import Navbar from "./components/navbar";
-import Hero from "./components/hero";
-import WhyUs from "./components/whyUs";
-import Reviews from "./components/reviews";
-import Generator from "./components/generator";
-import Footer from "./components/footer";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+
+import Welcome from "./scenes/welcome";
+import Home from "./scenes/home";
+import Profile from "./scenes/profile";
+import Register from "./scenes/register";
 
 function App() {
   return (
-    <div className="bg-[#1A232E] overflow-hidden">
-      <Navbar />
-      <Hero />
-      <WhyUs />
-      <Reviews />
-      <Generator />
-      <Footer />
+    <div className="bg-[#1A232E] overflow-hidden app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile/:userId" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import User from "../models/User.js";
 
 export const register = async (req, res) => {
   try {
-    const { firstName, lastname, email, password, picturePath, suburb, city } =
+    const { firstName, lastName, email, password, picturePath, suburb, city } =
       req.body;
 
     const salt = await bcrypt.genSalt();
@@ -12,7 +12,7 @@ export const register = async (req, res) => {
 
     const newUser = new User({
       firstName,
-      lastname,
+      lastName,
       email,
       password: hash,
       picturePath,
@@ -34,18 +34,20 @@ export const login = async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
     if (!user) {
-      res.status(400).json({ error: "User doesn't exist." });
+      return res.status(400).json({ error: "User doesn't exist." });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      res.status(400).json({ error: "Password is incorrect." });
+      return res.status(400).json({ error: "Password is incorrect." });
     }
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     delete user.password;
     res.status(200).json({ token, user });
+    return;
   } catch (err) {
     res.status(500).json({ error: err.message });
+    return;
   }
 };

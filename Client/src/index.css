@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.app {
+  font-family: "Montserrat", sans-serif;
+}
+
+input.error {
+  border-color: #fc8181;
+}
 
 #glass {
   background: rgb(42, 42, 42);
@@ -33,7 +43,7 @@
   font-size: 18px;
   justify-content: center;
   line-height: 1em;
-  max-width: 100%;
+  width: 50%;
   min-width: 140px;
   padding: 3px;
   text-decoration: none;

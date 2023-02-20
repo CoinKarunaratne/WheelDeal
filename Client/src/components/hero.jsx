@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section id="home" className="flex flex-col sm:flex-row p-11 pt-[80px]">
       <div className="sm:w-1/2 text-left h-full px-10 lg:pt-[50px]">
@@ -12,14 +15,10 @@ export default function Hero() {
           buyers and sellers, you're sure to find the perfect match for your
           vehicle. Post your listing today and start receiving offers!
         </p>
-        <div className="flex flex-row gap-5">
-          <button id="registerBtn">
-            <span className="text-md font-bold">Sign Up</span>
-          </button>
-          <button id="registerBtn">
-            <span className="text-md font-bold">Login</span>
-          </button>
-        </div>
+
+        <button onClick={() => navigate("/register")} id="registerBtn">
+          <span className="text-md font-bold">Get Started</span>
+        </button>
       </div>
       <div className="sm:w-1/2 flex h-full pt-10">
         <div className="">
