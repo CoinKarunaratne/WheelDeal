@@ -6,6 +6,7 @@ import { setLogin } from "../state/index";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("Required"),
@@ -78,7 +79,11 @@ export default function Form() {
           token: loggedIn.token,
         })
       );
-      navigate("/home");
+      if (isMobile) {
+        navigate("/newsfeed/mobile");
+      } else {
+        navigate("/home");
+      }
     }
   };
 
@@ -100,9 +105,13 @@ export default function Form() {
   }, [register]);
 
   return (
-    <div className="flex sm:flex-row flex-col h-[100vh] bg-[#1A232E]">
+    <div className="flex sm:flex-row flex-col min-h-screen bg-[#1A232E]">
       <div className="sm:basis-1/2 flex flex-col justify-center h-full">
-        <h1 className="font-semibold sm:text-[30px] text-[25px] text-white text-center mb-5">
+        <h1
+          className={`font-semibold sm:text-[30px] text-[25px] text-white text-center mb-5 ${
+            register ? "mt-5" : "mt-[100px]"
+          }`}
+        >
           {register ? "Join the WheelDeal Community" : "Log in to Your Account"}
         </h1>
         <div className="w-[70%] bg-slate-700 rounded-xl mx-auto shadow-xl shadow-black">
@@ -362,7 +371,7 @@ export default function Form() {
       </div>
       <div className="hidden sm:flex basis-1/2">
         <img
-          className="object-cover h-full w-full"
+          className="object-cover max-h-screen w-full"
           src="https://i.pinimg.com/originals/ee/24/7e/ee247e6773756d57d933416f7b1e1a17.jpg"
           alt=""
         />

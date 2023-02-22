@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-row">
+      <div className="flex flex-row min-h-screen">
         <ProfileWidget />
         <PostWidget />
         <CollectionWidget />

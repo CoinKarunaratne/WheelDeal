@@ -170,10 +170,36 @@ export default function NavBar({ page }) {
               id="glass"
               className={`${
                 toggle ? "flex" : "hidden"
-              } p-6 pb-0 absolute top-20 right-0 mx-4 min-w-[140px]`}
+              } p-6 absolute top-20 right-0 mx-4 min-w-[140px] z-10`}
             >
               <ul className="list-none flex flex-col justify-end items-center flex-1">
-                <li className="font-normal cursor-pointer text-[16px] text-white mb-5 flex flex-col gap-4">
+                <motion.li
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    navigate("/newsfeed/mobile");
+                  }}
+                  className="font-medium cursor-pointer text-[16px] text-white mb-5"
+                >
+                  Homepage
+                </motion.li>
+                <div className="bg-white w-[80%] h-[1px] mb-7"></div>
+                <motion.li
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    navigate("/collection/mobile");
+                  }}
+                  className="font-medium cursor-pointer text-[16px] text-white mb-5"
+                >
+                  Saved Posts
+                </motion.li>
+                <div className="bg-white w-[80%] h-[1px] mb-7"></div>
+                <motion.li
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    navigate(`/profile/${user._id}`);
+                  }}
+                  className="font-normal cursor-pointer text-[16px] text-white mb-5 flex flex-col gap-4"
+                >
                   <div className="rounded-full h-[50px] w-[50px] self-center">
                     <img
                       className="rounded-full object-cover h-full w-full"
@@ -184,9 +210,9 @@ export default function NavBar({ page }) {
                   <div className="text-white font-medium">
                     {user.firstName + " " + user.lastName}
                   </div>
-                </li>
+                </motion.li>
                 <div className="bg-white w-[80%] h-[1px] mb-7"></div>
-                <li className="font-normal cursor-pointer text-[16px] text-white mb-5">
+                <li className="font-normal cursor-pointer text-[16px] text-white">
                   <motion.button
                     whileTap={{ scale: 0.9 }}
                     className="text-lg bg-green-600 font-bold text-white rounded-lg px-5 py-1"
