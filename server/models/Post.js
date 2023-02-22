@@ -27,13 +27,13 @@ const postSchema = mongoose.Schema(
     description: String,
     userPicturePath: String,
     picturePath: String,
-    comments: {
-      type: Array,
-      default: [],
-    },
     saves: {
       type: Array,
       default: [],
+    },
+    createdDate: {
+      type: Date,
+      default: Date.now,
     },
   },
   { timestamps: true }

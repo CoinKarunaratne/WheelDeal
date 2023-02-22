@@ -45,11 +45,11 @@ app.post("/auth/register", upload.single("picture"), register);
 app.post("/auth/login", login);
 
 //User profile Route
-app.post("/profile/:id", verifyToken, getUser);
+app.get("/profile/:id", verifyToken, getUser);
 
 //Post Route
 app.post("/posts/create", verifyToken, upload.single("picture"), createPost);
-app.post("/posts", publishRoutes);
+app.use("/posts", publishRoutes);
 
 //Mongoose
 const PORT = process.env.PORT || 6001;

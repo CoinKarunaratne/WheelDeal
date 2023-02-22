@@ -8,7 +8,7 @@ export default function profileWidget() {
     month: "long",
   });
   return (
-    <div className="flex flex-col px-5 border-r-2">
+    <div className="basis-1/4 flex flex-col px-5 border-r-2 border-sky-900">
       <div className="rounded-lg shadow-lg shadow-black bg-[#252525] m-auto mt-[170px] text-white flex flex-col lg:w-[350px]">
         <div className="rounded-full h-[150px] w-[150px] mt-[-70px] self-center">
           <img

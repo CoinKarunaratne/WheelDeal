@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { setLogout } from "../state/index";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function NavBar({ page }) {
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   return (
     <>
@@ -123,11 +129,78 @@ export default function NavBar({ page }) {
           initial="hidden"
           whileInView="show"
           media={{ minWidth: 768 }}
-          className="w-full flex justify-center px-[5%] py-6"
+          className="w-full flex justify-between px-[5%] py-6 h-[90px]"
         >
           <h1 className="font-bold text-white text-3xl w-[124px] h-[32px] self-center">
             WheelDeal
           </h1>
+
+          <div className="h-full hidden sm:flex flex-row gap-4">
+            <div className="rounded-full h-[50px] w-[50px] mt-[-5px]">
+              <img
+                className="rounded-full object-cover h-full w-full"
+                src={`http://localhost:3001/assets/${user.picturePath}`}
+                alt="profile-picture"
+              />
+            </div>
+            <div className="text-white pt-2 font-medium">
+              {user.firstName + " " + user.lastName}
+            </div>
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              className="text-lg bg-green-600 font-bold text-white rounded-lg px-5"
+              onClick={() => {
+                dispatch(setLogout());
+                navigate("/");
+              }}
+            >
+              Logout
+            </motion.button>
+          </div>
+          <div className="sm:hidden flex flex-1 justify-end items-center">
+            <motion.img
+              whileTap={{ scale: 0.7 }}
+              src="/menu.svg"
+              className="cursor-pointer"
+              onClick={() => setToggle((prev) => !prev)}
+            />
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              id="glass"
+              className={`${
+                toggle ? "flex" : "hidden"
+              } p-6 pb-0 absolute top-20 right-0 mx-4 min-w-[140px]`}
+            >
+              <ul className="list-none flex flex-col justify-end items-center flex-1">
+                <li className="font-normal cursor-pointer text-[16px] text-white mb-5 flex flex-col gap-4">
+                  <div className="rounded-full h-[50px] w-[50px] self-center">
+                    <img
+                      className="rounded-full object-cover h-full w-full"
+                      src={`http://localhost:3001/assets/${user.picturePath}`}
+                      alt="profile-picture"
+                    />
+                  </div>
+                  <div className="text-white font-medium">
+                    {user.firstName + " " + user.lastName}
+                  </div>
+                </li>
+                <div className="bg-white w-[80%] h-[1px] mb-7"></div>
+                <li className="font-normal cursor-pointer text-[16px] text-white mb-5">
+                  <motion.button
+                    whileTap={{ scale: 0.9 }}
+                    className="text-lg bg-green-600 font-bold text-white rounded-lg px-5 py-1"
+                    onClick={() => {
+                      dispatch(setLogout());
+                      navigate("/");
+                    }}
+                  >
+                    Logout
+                  </motion.button>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
         </motion.nav>
       )}
     </>

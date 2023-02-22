@@ -7,7 +7,7 @@ import Register from "./scenes/register";
 
 function App() {
   return (
-    <div className="bg-[#1A232E] overflow-hidden app">
+    <div className="bg-[#1A232E] app">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
