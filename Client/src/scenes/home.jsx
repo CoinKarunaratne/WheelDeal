@@ -20,7 +20,7 @@ export default function Home() {
     <div>
       {user !== null && <Navbar />}
       {user !== null && (
-        <div className="flex flex-row min-h-screen scale-[0.95]">
+        <div className="flex flex-row min-h-screen">
           <ProfileWidget />
           <PostWidget />
           <CollectionWidget />

@@ -145,7 +145,9 @@ export default function profileWidget() {
       <div
         className={`${mobile !== "mobile" && "basis-1/2"} flex flex-col px-5 ${
           mobile !== "mobile" && "border-r-2"
-        } border-sky-900 ${mobile === "mobile" && "mt-[100px]"}`}
+        } border-sky-900 ${mobile === "mobile" && "overflow-x-hidden"} ${
+          mobile === "mobile" && "mt-[100px]"
+        }`}
       >
         <div className="flex flex-col sm:flex-row justify-between rounded-lg p-5 bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-black mb-5">
           <div className="px-5">
@@ -272,12 +274,12 @@ export default function profileWidget() {
           </div>
           <div className="relative w-[250px] px-5">
             <img
-              className="rounded-xl w-[150px] h-[150px] absolute top-[190px] right-0 shadow-lg shadow-black"
+              className="rounded-xl w-[150px] h-[150px] hidden sm:inline-block absolute top-[190px] right-0 shadow-lg shadow-black"
               src="/postCar.jpg"
               alt=""
             />
             <img
-              className="rounded-xl w-[150px] h-[150px] absolute top-[50px] left-0 shadow-lg shadow-black"
+              className="rounded-xl w-[150px] h-[150px] hidden sm:inline-block absolute top-[50px] left-0 shadow-lg shadow-black"
               src="/postCar2.jpg"
               alt=""
             />

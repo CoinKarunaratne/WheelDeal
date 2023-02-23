@@ -119,7 +119,7 @@ export default function Form() {
   }, [register]);
 
   return (
-    <div className="flex sm:flex-row flex-col min-h-screen bg-[#1A232E] overflow-y-hidden">
+    <div className="flex sm:flex-row flex-col min-h-screen max-h-screen bg-[#1A232E]">
       <div className="sm:basis-1/2 flex flex-col justify-center h-full scale-[0.95]">
         <h1
           className={`font-semibold sm:text-[30px] text-[25px] text-white text-center mb-5 ${
@@ -128,7 +128,7 @@ export default function Form() {
         >
           {register ? "Join the WheelDeal Community" : "Log in to Your Account"}
         </h1>
-        <div className="w-[70%] bg-slate-700 rounded-xl mx-auto shadow-xl shadow-black">
+        <div className="w-[90%] sm:w-[70%] bg-slate-700 rounded-xl mx-auto shadow-xl shadow-black">
           <form
             onSubmit={formik.handleSubmit}
             className="w-[100%] my-0 px-10 pt-5"

@@ -60,14 +60,12 @@ export default function collectionWidget() {
     <>
       {mobile === "mobile" && <Navbar />}
       <div
-        className={`${
+        className={`overflow-x-hidden ${
           mobile !== "mobile" && "basis-1/4"
         } flex justify-end pt-11 min-h-screen`}
       >
         <div
-          className={`bg-[#252525] -mr-11 pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] ${
-            isMobile && "right-11"
-          } relative`}
+          className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] relative`}
         >
           <h1
             className={`text-xl font-bold text-white ${
@@ -110,18 +108,6 @@ export default function collectionWidget() {
                     >
                       Contact Seller
                     </a>
-                    {mobile === "mobile" && (
-                      <motion.button
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => {
-                          savePost(post._id);
-                        }}
-                        className="rounded-full w-[30px] h-[30px] bg-red-500 absolute -right-[50px] top-4 text-lg
-                      text-white font-bold shadow-lg shadow-black"
-                      >
-                        x
-                      </motion.button>
-                    )}
                   </div>
                 </div>
               );

@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 
 function Welcome() {
   return (
-    <div className="bg-[#1A232E] overflow-hidden app scale-[0.95]">
+    <div className="bg-[#1A232E] overflow-hidden app">
       <Navbar page="welcome" />
       <Hero />
       <WhyUs />
