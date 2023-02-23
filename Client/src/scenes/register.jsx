@@ -119,8 +119,8 @@ export default function Form() {
   }, [register]);
 
   return (
-    <div className="flex sm:flex-row flex-col min-h-screen bg-[#1A232E]">
-      <div className="sm:basis-1/2 flex flex-col justify-center h-full">
+    <div className="flex sm:flex-row flex-col min-h-screen bg-[#1A232E] overflow-y-hidden">
+      <div className="sm:basis-1/2 flex flex-col justify-center h-full scale-[0.95]">
         <h1
           className={`font-semibold sm:text-[30px] text-[25px] text-white text-center mb-5 ${
             register ? "mt-5" : "mt-[100px]"
@@ -385,7 +385,7 @@ export default function Form() {
       </div>
       <div className="hidden sm:flex basis-1/2">
         <img
-          className="object-cover max-h-screen w-full"
+          className="object-cover h-full w-full"
           src="https://i.pinimg.com/originals/ee/24/7e/ee247e6773756d57d933416f7b1e1a17.jpg"
           alt=""
         />

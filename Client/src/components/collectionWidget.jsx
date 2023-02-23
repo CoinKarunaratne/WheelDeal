@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import { motion } from "framer-motion";
 import { setUser, setPosts, setFavoritePosts } from "../state";
 import { useNavigate } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 export default function collectionWidget() {
   const dispatch = useDispatch();
@@ -63,7 +64,11 @@ export default function collectionWidget() {
           mobile !== "mobile" && "basis-1/4"
         } flex justify-end pt-11 min-h-screen`}
       >
-        <div className="bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] relative">
+        <div
+          className={`bg-[#252525] -mr-11 pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] ${
+            isMobile && "right-11"
+          } relative`}
+        >
           <h1
             className={`text-xl font-bold text-white ${
               mobile === "mobile" && "ml-7"

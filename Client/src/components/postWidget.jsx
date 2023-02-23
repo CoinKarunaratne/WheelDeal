@@ -147,7 +147,7 @@ export default function profileWidget() {
           mobile !== "mobile" && "border-r-2"
         } border-sky-900 ${mobile === "mobile" && "mt-[100px]"}`}
       >
-        <div className="flex flex-row justify-between rounded-lg p-5 bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-black mb-5">
+        <div className="flex flex-col sm:flex-row justify-between rounded-lg p-5 bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-black mb-5">
           <div className="px-5">
             <h1 className="text-white font-bold text-3xl">Post your Ad Here</h1>
             <form
