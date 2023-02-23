@@ -122,7 +122,7 @@ export default function collectionWidget() {
               );
             })}
           </div>
-          <h1 className="text-sm absolute self-center bottom-0 text-slate-500 mb-10">
+          <h1 className="text-sm absolute self-end bottom-0 text-slate-500 mb-10">
             Copyright © 2023 LuminHub.
           </h1>
         </div>
