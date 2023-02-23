@@ -354,7 +354,7 @@ export default function profileWidget() {
                           {post.year}
                         </h1>
                       </div>
-                      <p className="text-white font-medium">
+                      <p className="text-white text-base font-medium">
                         {post.description}
                       </p>
                       <h1 className="text-white font-medium">
@@ -433,7 +433,9 @@ export default function profileWidget() {
                         {post.year}
                       </h1>
                     </div>
-                    <p className="text-white font-medium">{post.description}</p>
+                    <p className="text-white text-base font-medium">
+                      {post.description}
+                    </p>
                     <h1 className="text-white font-medium">
                       {post.suburb + " " + post.city}
                     </h1>
