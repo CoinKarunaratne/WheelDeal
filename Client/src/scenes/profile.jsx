@@ -129,7 +129,7 @@ export default function profileWidget() {
                       {post.year}
                     </h1>
                   </div>
-                  <p className="text-white font-medium text-base">
+                  <p className="text-white font-medium text-sm">
                     {post.description}
                   </p>
                   <h1 className="text-white font-medium">
