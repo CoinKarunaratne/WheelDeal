@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Welcome from "./scenes/welcome";
 import Home from "./scenes/home";
@@ -8,6 +9,7 @@ import PostWidget from "./components/postWidget";
 import CollectionWidget from "./components/collectionWidget";
 
 function App() {
+  const user = useSelector((state) => state.user);
   return (
     <div className="bg-[#1A232E] app">
       <BrowserRouter>

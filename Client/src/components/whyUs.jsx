@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 export default function whyUs() {
   return (
@@ -9,7 +10,7 @@ export default function whyUs() {
       <div className="flex flex-col md:flex-row px-[8%] gap-7">
         <motion.div
           whileInView={{ scale: 1 }}
-          initial={{ scale: 0 }}
+          initial={isMobile ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.5 }}
           id="whiteGlass"
           className="basis-1/3 p-10 rounded-lg"
@@ -29,7 +30,7 @@ export default function whyUs() {
         </motion.div>
         <motion.div
           whileInView={{ scale: 1 }}
-          initial={{ scale: 0 }}
+          initial={isMobile ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           id="whiteGlass"
           className="basis-1/3 p-10 rounded-lg"
@@ -51,7 +52,7 @@ export default function whyUs() {
         </motion.div>
         <motion.div
           whileInView={{ scale: 1 }}
-          initial={{ scale: 0 }}
+          initial={isMobile ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
           id="whiteGlass"
           className="basis-1/3 p-10 rounded-lg"

@@ -71,12 +71,12 @@ export default function collectionWidget() {
           >
             Recently Favorites
           </h1>
-          <div className="flex flex-col gap-4 my-8 py-8">
+          <div className="flex flex-col gap-4 my-8 py-8 relative">
             {favoritePosts.map((post) => {
               return (
                 <div
                   key={post._id}
-                  className={`flex flex-row ml-10 mb-10 mr-1 ${
+                  className={`flex flex-row absolute left-0 ml-10 mb-10 mr-1 ${
                     mobile === "mobile" && "self-center"
                   } bg-gradient-to-r from-[#FF8473] to-[#fff9D2] shadow-lg shadow-black h-[80px] w-[250px] pl-0 rounded-2xl`}
                 >

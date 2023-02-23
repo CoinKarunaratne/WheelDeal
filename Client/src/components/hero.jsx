@@ -4,12 +4,12 @@ export default function Hero() {
   const navigate = useNavigate();
   return (
     <section id="home" className="flex flex-col sm:flex-row p-11 pt-[80px]">
-      <div className="sm:w-1/2 text-left h-full px-10 lg:pt-[50px]">
+      <div className="sm:w-1/2 text-left h-full sm:px-10 lg:pt-[50px]">
         <h1 className="text-4xl lg:text-5xl font-bold my-10 text-white">
           Join the WheelDeal Community <br /> for a Smarter Car Trading
           Experience
         </h1>
-        <p className="text-lg lg:text-xl font-light mb-10 w-[70%] text-white">
+        <p className="text-base sm:text-lg lg:text-xl font-light mb-10 w-[70%] text-white">
           Whether you're looking to sell your car, truck, or motorcycle, our
           vehicle marketplace has got you covered. With a large community of
           buyers and sellers, you're sure to find the perfect match for your

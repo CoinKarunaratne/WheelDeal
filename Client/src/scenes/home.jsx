@@ -3,22 +3,29 @@ import ProfileWidget from "../components/profileWidget";
 import PostWidget from "../components/postWidget";
 import CollectionWidget from "../components/collectionWidget";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const user = useSelector((state) => state.user);
-  const date = new Date(user.joinedDate);
-  const formattedDate = date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-  });
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user === null) {
+      navigate("/register");
+    }
+  }, []);
+
   return (
     <div>
-      <Navbar />
-      <div className="flex flex-row min-h-screen">
-        <ProfileWidget />
-        <PostWidget />
-        <CollectionWidget />
-      </div>
+      {user !== null && <Navbar />}
+      {user !== null && (
+        <div className="flex flex-row min-h-screen">
+          <ProfileWidget />
+          <PostWidget />
+          <CollectionWidget />
+        </div>
+      )}
     </div>
   );
 }

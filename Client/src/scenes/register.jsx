@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
 import { setLogin } from "../state/index";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { isMobile } from "react-device-detect";
 
@@ -42,6 +42,17 @@ export default function Form() {
   const [register, isRegister] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (user !== null) {
+      if (isMobile) {
+        navigate("/newsfeed/mobile");
+      } else {
+        navigate("/home");
+      }
+    }
+  }, []);
 
   const registerSetup = async (values, onSubmitProps) => {
     const formData = new FormData();
