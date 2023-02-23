@@ -95,8 +95,11 @@ export default function Form() {
       );
       if (isMobile) {
         navigate("/newsfeed/mobile");
-      } else {
+      } else if (user !== null) {
         navigate("/home");
+      } else {
+        navigate("/register");
+        alert("Password is incorrect. Please try again.");
       }
     }
   };
