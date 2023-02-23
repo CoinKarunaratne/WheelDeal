@@ -95,11 +95,12 @@ export default function Form() {
       );
       if (isMobile) {
         navigate("/newsfeed/mobile");
-      } else if (user !== null) {
+      } else if (user !== null && user !== undefined) {
         navigate("/home");
+        console.log(user);
       } else {
         navigate("/register");
-        alert("Password is incorrect. Please try again.");
+        alert("Credentials are wrong. Please try again.");
       }
     }
   };
