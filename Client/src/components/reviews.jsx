@@ -33,9 +33,9 @@ export default function Reviews() {
         autoPlay={true}
         autoPlaySpeed={3000}
       >
-        {reviews.map((review) => {
+        {reviews.map((review, array) => {
           return (
-            <div className="p-8">
+            <div key={array} className="p-8">
               <p className="text-white text-lg">{review.description}</p>
               <p className="text-right text-white text-lg">{review.name}</p>
             </div>

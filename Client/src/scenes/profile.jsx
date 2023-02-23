@@ -39,6 +39,21 @@ export default function profileWidget() {
     getPosts();
   }, []);
 
+  const deletePost = async (value) => {
+    const deleteResponse = await fetch(
+      `${import.meta.env.VITE_BASE_URL}/posts/${value}/delete`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const posts = await deleteResponse.json();
+    dispatch(setPosts({ posts }));
+  };
+
   const savePost = async (value) => {
     const savedResponse = await fetch(
       `${import.meta.env.VITE_BASE_URL}/posts/${mainUser._id}/save`,
@@ -153,20 +168,33 @@ export default function profileWidget() {
                     {post.saves.length} people has saved this post.
                   </p>
 
-                  <motion.button
-                    whileHover={{ scale: 0.95 }}
-                    whileTap={{ scale: 0.9 }}
-                    className={`text-lg font-bold text-white rounded-lg py-1 ${
-                      post.saves.includes(mainUser._id)
-                        ? "bg-sky-600"
-                        : "bg-green-600"
-                    }`}
-                    onClick={() => {
-                      savePost(post._id);
-                    }}
-                  >
-                    {post.saves.includes(mainUser._id) ? "Remove" : "Save"}
-                  </motion.button>
+                  {post.userId === mainUser._id ? (
+                    <motion.button
+                      whileHover={{ scale: 0.95 }}
+                      whileTap={{ scale: 0.9 }}
+                      className={`text-lg font-bold text-white rounded-lg py-1 bg-red-500`}
+                      onClick={() => {
+                        deletePost(post._id);
+                      }}
+                    >
+                      Mark as Sold
+                    </motion.button>
+                  ) : (
+                    <motion.button
+                      whileHover={{ scale: 0.95 }}
+                      whileTap={{ scale: 0.9 }}
+                      className={`text-lg font-bold text-white rounded-lg py-1 ${
+                        post.saves.includes(mainUser._id)
+                          ? "bg-sky-600"
+                          : "bg-green-600"
+                      }`}
+                      onClick={() => {
+                        savePost(post._id);
+                      }}
+                    >
+                      {post.saves.includes(mainUser._id) ? "Remove" : "Save"}
+                    </motion.button>
+                  )}
                 </div>
               );
             }

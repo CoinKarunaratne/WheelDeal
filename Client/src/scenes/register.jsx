@@ -97,7 +97,6 @@ export default function Form() {
         navigate("/newsfeed/mobile");
       } else if (user !== null && user !== undefined) {
         navigate("/home");
-        console.log(user);
       } else {
         navigate("/register");
         alert("Credentials are wrong. Please try again.");
