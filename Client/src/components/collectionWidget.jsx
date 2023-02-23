@@ -16,7 +16,7 @@ export default function collectionWidget() {
   useEffect(() => {
     const getPosts = async () => {
       const receivedPosts = await fetch(
-        `http://localhost:3001/posts/${user._id}/saves`,
+        `${import.meta.env.VITE_BASE_URL}/posts/${user._id}/saves`,
         {
           method: "GET",
           headers: {
@@ -33,7 +33,7 @@ export default function collectionWidget() {
 
   const savePost = async (value) => {
     const savedResponse = await fetch(
-      `http://localhost:3001/posts/${user._id}/save`,
+      `${import.meta.env.VITE_BASE_URL}/posts/${user._id}/save`,
       {
         method: "PATCH",
         headers: {
@@ -82,7 +82,9 @@ export default function collectionWidget() {
                 >
                   <img
                     className="rounded-2xl -ml-10 -mt-2 object-cover shadow-lg shadow-black h-[100px] w-[120px]"
-                    src={`http://localhost:3001/assets/${post.picturePath}`}
+                    src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                      post.picturePath
+                    }`}
                     alt="post-picture"
                   />
                   <div className="flex flex-col w-full pl-2 pr-4 pt-2 relative">

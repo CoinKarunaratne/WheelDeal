@@ -13,7 +13,7 @@ export default function profileWidget() {
         <div className="rounded-full h-[150px] w-[150px] mt-[-70px] self-center">
           <img
             className="rounded-full object-cover h-full w-full"
-            src={`http://localhost:3001/assets/${user.picturePath}`}
+            src={`${import.meta.env.VITE_BASE_URL}/assets/${user.picturePath}`}
             alt="profile-picture"
           />
         </div>

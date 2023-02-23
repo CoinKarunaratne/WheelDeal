@@ -139,7 +139,9 @@ export default function NavBar({ page }) {
             <div className="rounded-full h-[50px] w-[50px] mt-[-5px]">
               <img
                 className="rounded-full object-cover h-full w-full"
-                src={`http://localhost:3001/assets/${user.picturePath}`}
+                src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                  user.picturePath
+                }`}
                 alt="profile-picture"
               />
             </div>
@@ -203,7 +205,9 @@ export default function NavBar({ page }) {
                   <div className="rounded-full h-[50px] w-[50px] self-center">
                     <img
                       className="rounded-full object-cover h-full w-full"
-                      src={`http://localhost:3001/assets/${user.picturePath}`}
+                      src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                        user.picturePath
+                      }`}
                       alt="profile-picture"
                     />
                   </div>

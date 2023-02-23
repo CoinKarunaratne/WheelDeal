@@ -44,13 +44,16 @@ export default function profileWidget() {
   const [isFilter, setisFilter] = useState(false);
   useEffect(() => {
     const getPosts = async () => {
-      const receivedPosts = await fetch("http://localhost:3001/posts/", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const receivedPosts = await fetch(
+        `${import.meta.env.VITE_BASE_URL}/posts/`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const posts = await receivedPosts.json();
       dispatch(setPosts({ posts }));
     };
@@ -59,7 +62,7 @@ export default function profileWidget() {
 
   const deletePost = async (value) => {
     const deleteResponse = await fetch(
-      `http://localhost:3001/posts/${value}/delete`,
+      `${import.meta.env.VITE_BASE_URL}/posts/${value}/delete`,
       {
         method: "PATCH",
         headers: {
@@ -74,7 +77,7 @@ export default function profileWidget() {
 
   const savePost = async (value) => {
     const savedResponse = await fetch(
-      `http://localhost:3001/posts/${user._id}/save`,
+      `${import.meta.env.VITE_BASE_URL}/posts/${user._id}/save`,
       {
         method: "PATCH",
         headers: {
@@ -108,7 +111,7 @@ export default function profileWidget() {
     formData.append("picturePath", values.picture.name);
 
     const savedPostResponse = await fetch(
-      "http://localhost:3001/posts/create",
+      `${import.meta.env.VITE_BASE_URL}/posts/create`,
       {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
@@ -334,7 +337,9 @@ export default function profileWidget() {
                     >
                       <img
                         className="rounded-xl h-[150px] w-[150px] object-cover self-center -mt-[100px] shadow-lg shadow-black"
-                        src={`http://localhost:3001/assets/${post.picturePath}`}
+                        src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                          post.picturePath
+                        }`}
                         alt="post-picture"
                       />
                       <div className="flex flex-row justify-between">
@@ -360,7 +365,9 @@ export default function profileWidget() {
                         <div className="rounded-full h-[50px] w-[50px] mt-[-5px]">
                           <img
                             className="rounded-full object-cover h-full w-full"
-                            src={`http://localhost:3001/assets/${post.userPicturePath}`}
+                            src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                              post.userPicturePath
+                            }`}
                             alt="profile-picture"
                           />
                         </div>
@@ -409,7 +416,9 @@ export default function profileWidget() {
                   >
                     <img
                       className="rounded-xl h-[150px] w-[150px] object-cover self-center -mt-[100px] shadow-lg shadow-black"
-                      src={`http://localhost:3001/assets/${post.picturePath}`}
+                      src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                        post.picturePath
+                      }`}
                       alt="post-picture"
                     />
                     <div className="flex flex-row justify-between">
@@ -433,7 +442,9 @@ export default function profileWidget() {
                       <div className="rounded-full h-[50px] w-[50px] mt-[-5px]">
                         <img
                           className="rounded-full object-cover h-full w-full"
-                          src={`http://localhost:3001/assets/${post.userPicturePath}`}
+                          src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                            post.userPicturePath
+                          }`}
                           alt="profile-picture"
                         />
                       </div>

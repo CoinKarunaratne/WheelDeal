@@ -24,7 +24,7 @@ export default function profileWidget() {
   useEffect(() => {
     const getPosts = async () => {
       const receivedPosts = await fetch(
-        `http://localhost:3001/posts/${userId}/posts`,
+        `${import.meta.env.VITE_BASE_URL}/posts/${userId}/posts`,
         {
           method: "GET",
           headers: {
@@ -41,7 +41,7 @@ export default function profileWidget() {
 
   const savePost = async (value) => {
     const savedResponse = await fetch(
-      `http://localhost:3001/posts/${mainUser._id}/save`,
+      `${import.meta.env.VITE_BASE_URL}/posts/${mainUser._id}/save`,
       {
         method: "PATCH",
         headers: {
@@ -70,7 +70,9 @@ export default function profileWidget() {
             <div className="rounded-full h-[150px] w-[150px] mt-[-70px] self-center">
               <img
                 className="rounded-full object-cover h-full w-full shadow-lg shadow-black"
-                src={`http://localhost:3001/assets/${user.picturePath}`}
+                src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                  user.picturePath
+                }`}
                 alt="profile-picture"
               />
             </div>
@@ -114,7 +116,9 @@ export default function profileWidget() {
                 >
                   <img
                     className="rounded-xl h-[150px] w-[150px] object-cover self-center -mt-[100px] shadow-lg shadow-black"
-                    src={`http://localhost:3001/assets/${post.picturePath}`}
+                    src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                      post.picturePath
+                    }`}
                     alt="post-picture"
                   />
                   <div className="flex flex-row justify-between">
@@ -133,7 +137,9 @@ export default function profileWidget() {
                     <div className="rounded-full h-[50px] w-[50px] mt-[-5px]">
                       <img
                         className="rounded-full object-cover h-full w-full"
-                        src={`http://localhost:3001/assets/${post.userPicturePath}`}
+                        src={`${import.meta.env.VITE_BASE_URL}/assets/${
+                          post.userPicturePath
+                        }`}
                         alt="profile-picture"
                       />
                     </div>
