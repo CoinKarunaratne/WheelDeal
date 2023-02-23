@@ -316,12 +316,14 @@ export default function profileWidget() {
             <option value="West">West</option>
             <option value="South">South</option>
           </select>
-          <button
+          <motion.button
+            whileHover={{ scale: 0.95 }}
+            whileTap={{ scale: 0.9 }}
             className="mb-[0.5rem] w-[100px] py-[0.65rem] text-[1rem] text-slate-700 font-medium bg-gradient-to-r from-lime-500 to-green-500 rounded-[10px]"
             type="submit"
           >
             {isFilter ? "Clear" : "Filter"}
-          </button>
+          </motion.button>
         </form>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5 p-5 pt-[100px]">
           {isFilter
