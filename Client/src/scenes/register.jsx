@@ -123,7 +123,7 @@ export default function Form() {
 
   return (
     <div className="flex sm:flex-row flex-col min-h-screen sm:max-h-screen bg-[#1A232E]">
-      <div className="sm:basis-1/2 flex flex-col justify-center h-full scale-[0.95]">
+      <div className="sm:basis-1/2 flex flex-col justify-center h-full scale-[0.9]">
         <h1
           className={`font-semibold sm:text-[30px] text-[25px] text-white text-center mb-5 ${
             register ? "mt-5" : "mt-[100px]"
