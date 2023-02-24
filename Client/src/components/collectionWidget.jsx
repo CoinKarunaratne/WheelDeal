@@ -65,7 +65,7 @@ export default function collectionWidget() {
         } flex justify-end shrink-0 pt-11 min-h-screen relative`}
       >
         <div
-          className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] absolute right-0`}
+          className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-[90%] shadow-lg shadow-black rounded-l-[150px] self-end`}
         >
           <h1
             className={`text-xl font-bold text-white ${
