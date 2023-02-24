@@ -387,7 +387,7 @@ export default function Form() {
         </div>
       </div>
 
-      <div className="hidden sm:inline-block basis-1/2 sm:h-[120vh] lg:h-[110vh] overflow-hidden">
+      <div className="hidden sm:inline-block basis-1/2 h-[130vh] overflow-hidden">
         <img
           className="object-cover block w-full h-full"
           src="https://i.pinimg.com/originals/ee/24/7e/ee247e6773756d57d933416f7b1e1a17.jpg"
