@@ -122,8 +122,8 @@ export default function Form() {
   }, [register]);
 
   return (
-    <div className="flex sm:flex-row flex-col min-h-screen sm:max-h-screen bg-[#1A232E]">
-      <div className="sm:basis-1/2 flex flex-col justify-center h-full scale-[0.9]">
+    <div className="flex sm:flex-row flex-col bg-[#1A232E] max-h-screen">
+      <div className="sm:basis-1/2 flex flex-col justify-center h-full">
         <h1
           className={`font-semibold sm:text-[30px] text-[25px] text-white text-center mb-5 ${
             register ? "mt-5" : "mt-[100px]"
@@ -131,7 +131,7 @@ export default function Form() {
         >
           {register ? "Join the WheelDeal Community" : "Log in to Your Account"}
         </h1>
-        <div className="w-[90%] sm:w-[70%] bg-slate-700 rounded-xl mx-auto shadow-xl shadow-black">
+        <div className="w-[90%] sm:w-[70%] bg-slate-700 rounded-xl mx-auto shadow-xl shadow-black scale-[0.8] relative bottom-8">
           <form
             onSubmit={formik.handleSubmit}
             className="w-[100%] my-0 px-10 pt-5"
@@ -388,7 +388,7 @@ export default function Form() {
       </div>
       <div className="hidden sm:flex basis-1/2">
         <img
-          className="object-cover h-full w-full"
+          className="object-cover w-full"
           src="https://i.pinimg.com/originals/ee/24/7e/ee247e6773756d57d933416f7b1e1a17.jpg"
           alt=""
         />
