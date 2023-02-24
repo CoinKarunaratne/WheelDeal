@@ -62,10 +62,10 @@ export default function collectionWidget() {
       <div
         className={`overflow-x-hidden ${
           mobile !== "mobile" && "basis-1/4"
-        } flex justify-end shrink-0 pt-11 min-h-screen`}
+        } flex justify-end shrink-0 pt-11 min-h-screen relative`}
       >
         <div
-          className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] relative`}
+          className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] absolute right-0`}
         >
           <h1
             className={`text-xl font-bold text-white ${
