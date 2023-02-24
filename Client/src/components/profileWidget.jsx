@@ -8,7 +8,7 @@ export default function profileWidget() {
     month: "long",
   });
   return (
-    <div className="flex flex-col px-5 border-r-2 border-sky-900 w-auto shrink grow-0">
+    <div className="flex flex-col px-5 border-r-2 border-sky-900 w-auto shrink">
       <div className="rounded-lg shadow-lg shadow-black bg-[#252525] m-auto mt-[170px] text-white flex flex-col w-auto lg:w-[350px]">
         <div className="rounded-full h-[150px] w-[150px] mt-[-70px] self-center">
           <img
@@ -19,7 +19,7 @@ export default function profileWidget() {
         </div>
         <div className="flex flex-col gap-3 px-10 py-7">
           <div className="flex flex-col md:flex-row text-center justify-between">
-            <h1 className="font-bold text-slate-500">Name </h1>
+            <h1 className="font-bold text-slate-500">Name</h1>
             <h1 className="font-normal">
               {user.firstName + " " + user.lastName}
             </h1>
