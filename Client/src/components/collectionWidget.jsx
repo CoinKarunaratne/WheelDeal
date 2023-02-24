@@ -65,7 +65,7 @@ export default function collectionWidget() {
         } flex justify-end shrink-0 pt-11 min-h-screen relative`}
       >
         <div
-          className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-[90%] shadow-lg shadow-black rounded-l-[150px] self-end`}
+          className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-[90%] shadow-lg shadow-black rounded-l-[150px]`}
         >
           <h1
             className={`text-xl font-bold text-white ${
@@ -84,7 +84,7 @@ export default function collectionWidget() {
                   } bg-gradient-to-r from-[#FF8473] to-[#fff9D2] shadow-lg shadow-black h-[80px] w-[250px] pl-0 rounded-2xl`}
                 >
                   <img
-                    className="rounded-2xl -ml-10 -mt-2 object-cover shadow-lg shadow-black h-[100px] w-[120px]"
+                    className="rounded-2xl object-cover shadow-lg shadow-black h-[100px] w-[120px]"
                     src={`${import.meta.env.VITE_BASE_URL}/assets/${
                       post.picturePath
                     }`}
