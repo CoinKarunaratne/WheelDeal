@@ -145,7 +145,7 @@ export default function profileWidget() {
       <div
         className={`${
           mobile !== "mobile" && "basis-1/2"
-        } flex flex-col shrink-0 px-5 ${
+        } flex flex-col shrink-0 grow px-5 ${
           mobile !== "mobile" && "border-r-2"
         } border-sky-900 ${mobile === "mobile" && "overflow-x-hidden"} ${
           mobile === "mobile" && "mt-[100px]"
