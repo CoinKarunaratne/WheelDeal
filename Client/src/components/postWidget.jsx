@@ -143,9 +143,7 @@ export default function profileWidget() {
     <>
       {mobile === "mobile" && <Navbar />}
       <div
-        className={`${
-          mobile !== "mobile" && "basis-1/2"
-        } flex flex-col shrink-0 grow px-5 ${
+        className={`flex flex-col grow w-[100%] px-5 ${
           mobile !== "mobile" && "border-r-2"
         } border-sky-900 ${mobile === "mobile" && "overflow-x-hidden"} ${
           mobile === "mobile" && "mt-[100px]"
@@ -274,14 +272,14 @@ export default function profileWidget() {
               </motion.button>
             </form>
           </div>
-          <div className="relative w-[250px] px-5">
+          <div className="relative w-[30%] px-5">
             <img
-              className="rounded-xl w-[150px] h-[150px] hidden sm:inline-block absolute top-[190px] right-0 shadow-lg shadow-black"
+              className="rounded-xl w-[150px] h-[150px] hidden lg:inline-block absolute top-[190px] right-0 shadow-lg shadow-black"
               src="/postCar.jpg"
               alt=""
             />
             <img
-              className="rounded-xl w-[150px] h-[150px] hidden sm:inline-block absolute top-[50px] left-0 shadow-lg shadow-black"
+              className="rounded-xl w-[150px] h-[150px] hidden lg:inline-block absolute top-[50px] left-0 shadow-lg shadow-black"
               src="/postCar2.jpg"
               alt=""
             />
@@ -329,7 +327,7 @@ export default function profileWidget() {
             {isFilter ? "Clear" : "Filter"}
           </motion.button>
         </form>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5 p-5 pt-[100px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5 p-5 pt-[100px]">
           {isFilter
             ? posts.map((post) => {
                 if (
@@ -368,7 +366,7 @@ export default function profileWidget() {
                         onClick={() => navigate(`/profile/${post.userId}`)}
                         className="flex flex-row gap-4 cursor-pointer hover:opacity-60"
                       >
-                        <div className="rounded-full h-[50px] w-[50px] mt-[-5px]">
+                        <div className="rounded-full flex flex-col md:flex-row justify-start h-[50px] w-[50px] mt-[-5px]">
                           <img
                             className="rounded-full object-cover h-full w-full"
                             src={`${import.meta.env.VITE_BASE_URL}/assets/${
@@ -377,7 +375,7 @@ export default function profileWidget() {
                             alt="profile-picture"
                           />
                         </div>
-                        <div className="text-sky-700 pt-2 font-semibold">
+                        <div className="text-sky-700 pt-2 font-semibold text-xs md:text-sm">
                           {post.firstName + " " + post.lastName}
                         </div>
                       </motion.div>

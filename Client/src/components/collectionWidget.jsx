@@ -62,7 +62,7 @@ export default function collectionWidget() {
       <div
         className={`overflow-x-hidden ${
           mobile !== "mobile" && "basis-1/4"
-        } flex justify-end pt-11 min-h-screen shrink-0`}
+        } lg:flex justify-end hidden pt-11 min-h-screen shrink-0 grow w-[100%]`}
       >
         <div
           className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] relative`}
@@ -84,7 +84,7 @@ export default function collectionWidget() {
                   } bg-gradient-to-r from-[#FF8473] to-[#fff9D2] shadow-lg shadow-black h-[80px] w-[250px] pl-0 rounded-2xl`}
                 >
                   <img
-                    className="rounded-2xl -ml-10 -mt-2 object-cover shadow-lg shadow-black h-[100px] w-[120px]"
+                    className="rounded-2xl inline-block -ml-10 -mt-2 object-cover shadow-lg shadow-black h-[100px] w-[120px]"
                     src={`${import.meta.env.VITE_BASE_URL}/assets/${
                       post.picturePath
                     }`}

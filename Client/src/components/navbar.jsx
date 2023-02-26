@@ -17,7 +17,7 @@ export default function NavBar({ page }) {
           initial="hidden"
           whileInView="show"
           media={{ minWidth: 768 }}
-          className="w-full flex justify-between px-[5%] py-6"
+          className="w-auto flex justify-between px-[5%] py-6"
         >
           <h1 className="font-bold text-white text-3xl w-[124px] h-[32px]">
             WheelDeal

@@ -11,7 +11,7 @@ import CollectionWidget from "./components/collectionWidget";
 function App() {
   const user = useSelector((state) => state.user);
   return (
-    <div className="bg-[#1A232E] app">
+    <div className="bg-[#1A232E] app inline-block w-[100%] whitespace-nowrap">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
