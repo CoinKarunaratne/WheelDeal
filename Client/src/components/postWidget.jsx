@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "./navbar";
 
 const postSchema = yup.object().shape({
-  car: yup.string().max(15).required("Required"),
+  car: yup.string().required("Required"),
   year: yup.number().required("Required"),
   description: yup.string().min(10).max(100).required("Required"),
   picture: yup.string().required("Required"),

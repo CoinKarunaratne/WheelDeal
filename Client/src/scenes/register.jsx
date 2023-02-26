@@ -93,7 +93,7 @@ export default function Form() {
           token: loggedIn.token,
         })
       );
-      if (isMobile) {
+      if (isMobile && user !== null && user !== undefined) {
         navigate("/newsfeed/mobile");
       } else if (user !== null && user !== undefined) {
         navigate("/home");
@@ -122,10 +122,10 @@ export default function Form() {
   }, [register]);
 
   return (
-    <div className="flex sm:flex-row flex-col bg-[#1A232E] h-full">
-      <div className="sm:basis-1/2 flex flex-col justify-center h-full">
+    <div className="flex lg:flex-row flex-col bg-[#1A232E] h-full">
+      <div className="lg:basis-1/2 flex flex-col justify-center h-full min-h-screen">
         <h1
-          className={`font-semibold sm:text-[30px] text-[25px] text-white text-center mb-5 ${
+          className={`font-semibold inline-block w-auto sm:text-[30px] text-[25px] text-white text-center mb-5 ${
             register ? "mt-5" : "mt-[100px]"
           }`}
         >
@@ -387,7 +387,7 @@ export default function Form() {
         </div>
       </div>
 
-      <div className="hidden sm:inline-block basis-1/2 h-[130vh] overflow-hidden">
+      <div className="hidden lg:inline-block basis-1/2 h-[110vh] overflow-hidden">
         <img
           className="object-cover block w-full h-full"
           src="https://i.pinimg.com/originals/ee/24/7e/ee247e6773756d57d933416f7b1e1a17.jpg"

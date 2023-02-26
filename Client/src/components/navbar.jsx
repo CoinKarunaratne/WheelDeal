@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { setLogout } from "../state/index";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 export default function NavBar({ page }) {
   const [toggle, setToggle] = useState(false);
@@ -131,7 +132,12 @@ export default function NavBar({ page }) {
           media={{ minWidth: 768 }}
           className="w-full flex justify-between px-[5%] py-6 h-[90px]"
         >
-          <h1 className="font-bold text-white text-3xl w-[124px] h-[32px] self-center">
+          <h1
+            onClick={() => {
+              isMobile ? navigate("/newsfeed/:mobile") : navigate("/home");
+            }}
+            className="font-bold cursor-pointer text-white text-3xl w-[124px] h-[32px] self-center"
+          >
             WheelDeal
           </h1>
 

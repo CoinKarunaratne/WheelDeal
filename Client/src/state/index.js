@@ -17,7 +17,6 @@ export const authSlice = createSlice({
     },
     setUser: (state, action) => {
       state.user = action.payload.user;
-      console.log(state.user);
     },
     setLogout: (state, action) => {
       state.user = null;
@@ -29,7 +28,6 @@ export const authSlice = createSlice({
     },
     setFavoritePosts: (state, action) => {
       state.favoritePosts = action.payload.favoritePosts;
-      console.log(state.favoritePosts);
     },
   },
 });

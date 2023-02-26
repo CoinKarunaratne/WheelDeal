@@ -14,6 +14,8 @@ export default function collectionWidget() {
   const { mobile } = useParams();
   const navigate = useNavigate();
 
+  console.log(mobile);
+
   useEffect(() => {
     const getPosts = async () => {
       const receivedPosts = await fetch(
@@ -58,18 +60,20 @@ export default function collectionWidget() {
 
   return (
     <>
-      {mobile === "mobile" && <Navbar />}
+      {mobile === ":mobile" && <Navbar />}
       <div
-        className={`overflow-x-hidden ${
-          mobile !== "mobile" && "basis-1/4"
-        } lg:flex justify-end hidden pt-11 min-h-screen shrink-0 grow w-[100%]`}
+        className={`${
+          mobile !== ":mobile" && "basis-1/4"
+        } justify-end pt-11 min-h-screen shrink-0 grow w-[100%] ${
+          mobile !== ":mobile" && "hidden"
+        } ${mobile === ":mobile" ? "flex" : "lg:flex"}`}
       >
         <div
           className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] relative`}
         >
           <h1
             className={`text-xl font-bold text-white ${
-              mobile === "mobile" && "ml-7"
+              mobile === ":mobile" && "ml-7"
             }`}
           >
             Recently Favorites
@@ -80,7 +84,7 @@ export default function collectionWidget() {
                 <div
                   key={post._id}
                   className={`flex flex-row absolute left-0 ml-10 mb-10 mr-1 ${
-                    mobile === "mobile" && "self-center"
+                    mobile === ":mobile" && "self-center"
                   } bg-gradient-to-r from-[#FF8473] to-[#fff9D2] shadow-lg shadow-black h-[80px] w-[250px] pl-0 rounded-2xl`}
                 >
                   <img
