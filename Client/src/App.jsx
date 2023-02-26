@@ -6,7 +6,7 @@ import Home from "./scenes/home";
 import Profile from "./scenes/profile";
 import Register from "./scenes/register";
 import PostWidget from "./components/postWidget";
-import CollectionWidget from "./components/collectionWidget";
+import MobileCollection from "./components/mobileCollection";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -19,7 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/profile/:userId" element={<Profile />} />
           <Route path="/newsfeed/:mobile" element={<PostWidget />} />
-          <Route path="/collection/:mobile" element={<CollectionWidget />} />
+          <Route path="/collection/:mobile" element={<MobileCollection />} />
         </Routes>
       </BrowserRouter>
     </div>

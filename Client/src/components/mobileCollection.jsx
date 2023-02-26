@@ -4,7 +4,7 @@ import Navbar from "./navbar";
 import { setUser, setPosts, setFavoritePosts } from "../state";
 import { useNavigate } from "react-router-dom";
 
-export default function collectionWidget() {
+export default function mobileCollection() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
@@ -32,17 +32,20 @@ export default function collectionWidget() {
 
   return (
     <>
-      <div className="basis-1/4 justify-end pt-11 min-h-screen shrink-0 grow w-[100%] hidden lg:flex">
+      <Navbar />
+      <div className="justify-end pt-11 min-h-screen w-[100%] flex">
         <div
           className={`bg-[#252525] pt-[120px] px-8 flex flex-col w-[90%] h-auto shadow-lg shadow-black rounded-l-[150px] relative`}
         >
-          <h1 className={`text-xl font-bold text-white`}>Recently Favorites</h1>
+          <h1 className={`text-xl font-bold text-white ml-7`}>
+            Recently Favorites
+          </h1>
           <div className="flex flex-col gap-4 my-8 py-8 relative">
             {favoritePosts.map((post) => {
               return (
                 <div
                   key={post._id}
-                  className={`flex flex-row absolute left-0 ml-10 mb-10 mr-1 bg-gradient-to-r from-[#FF8473] to-[#fff9D2] shadow-lg shadow-black h-[80px] w-[250px] pl-0 rounded-2xl`}
+                  className={`flex flex-row absolute left-0 ml-10 mb-10 mr-1 self-center bg-gradient-to-r from-[#FF8473] to-[#fff9D2] shadow-lg shadow-black h-[80px] w-[250px] pl-0 rounded-2xl`}
                 >
                   <img
                     className="rounded-2xl inline-block -ml-10 -mt-2 object-cover shadow-lg shadow-black h-[100px] w-[120px]"

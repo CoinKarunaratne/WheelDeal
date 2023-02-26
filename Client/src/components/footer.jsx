@@ -2,7 +2,10 @@ export default function () {
   return (
     <section id="footer" className="h-[600px] sm:h-[400px] w-full">
       <div className="flex h-full w-full justify-center sm:justify-between">
-        <div className="text-white text-[45px] font-bold align-text-bottom self-end p-8 hidden sm:flex">
+        <div
+          href="#home"
+          className="text-white text-[45px] font-bold align-text-bottom self-end p-8 hidden sm:flex"
+        >
           WheelDeal
         </div>
         <div className="align-text-bottom self-end flex flex-col gap-4">
