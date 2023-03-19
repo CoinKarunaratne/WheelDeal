@@ -2,8 +2,8 @@ React + Vite
 This template should help get you started developing with React in Vite.
 
 Getting started
-Clone this repository: git clone https://github.com/<your-github-username>/<your-project-name>.git.
-Navigate to the project directory: cd <your-project-name>.
+Clone this repository: git clone https://github.com/CoinKarunaratne/WheelDeal.git.
+Navigate to the project directory: cd WheelDeal.
 Install dependencies: npm install.
 Start the development server: npm run dev.
 Recommended IDE Setup
