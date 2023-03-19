@@ -1,27 +1,19 @@
-# Vue 3 + Typescript + Vite
+React + Vite
+This template should help get you started developing with React in Vite.
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+Getting started
+Clone this repository: git clone https://github.com/<your-github-username>/<your-project-name>.git.
+Navigate to the project directory: cd <your-project-name>.
+Install dependencies: npm install.
+Start the development server: npm run dev.
+Recommended IDE Setup
+VSCode + Vite Plugin for VSCode and ESLint extension for VSCode.
 
-## Recommended IDE Setup
+Type Support For .tsx Imports in TS
+Since TypeScript cannot handle type information for .tsx imports, you can install and add @tsconfig/recommended to the extends section in tsconfig.json.
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+Code Formatting
+This template uses Prettier for code formatting. Please ensure that your code follows the formatting rules. You can use the Prettier extension for your IDE or run npm run format to format the code.
 
-### If Using `<script setup>`
-
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
-
-### If Using Volar
-
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
-
-### If Using Vetur
-
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+Building for Production
+To build the project for production, run npm run build. This will create a production-ready build of the project in the dist directory.
